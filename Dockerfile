@@ -4,6 +4,8 @@ RUN apt-get update && \
   apt-get -yq install curl python && \
   rm -rf /var/lib/apt/lists/*
 
+ENV UPDATE 1
+
 RUN curl http://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python_2.0.4-1ubuntu14.04_all.deb > /tmp/mysql-connector-python_2.0.4-1ubuntu14.04_all.deb
 RUN curl http://cdn.mysql.com/Downloads/MySQLGUITools/mysql-utilities_1.5.4-1ubuntu14.04_all.deb > /tmp/mysql-utilities_1.5.4-1ubuntu14.04_all.deb
 
