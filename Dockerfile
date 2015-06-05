@@ -15,8 +15,6 @@ RUN tar xzvf /tmp/etcd-v2.0.11-linux-amd64.tar.gz
 RUN cp /etcd-v2.0.11-linux-amd64/etcdctl /usr/local/bin/etcdctl
 RUN rm -rf /tmp/etcd-v2.0.11-linux-amd64.tar.gz /etcd-v2.0.11-linux-amd64
 
-ENV UPDATE 7
-
 ADD run.sh /run.sh
 ADD after.sh /after.sh
 
