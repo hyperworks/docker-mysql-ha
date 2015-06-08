@@ -6,12 +6,12 @@ fi
 
 if [ -n "${ETCDCTL_PEERS}" ] && [ -n "${ETCD_DIR}" ]; then
 
-    MASTER_HOST=$(etcdctl get $ETCD_DIR/master_host)
+    MASTER_HOST=$(etcdctl get $ETCD_DIR/master/host)
     echo "=> MASTER_HOST=${MASTER_HOST}"
-    MASTER_PORT=$(etcdctl get $ETCD_DIR/master_port)
+    MASTER_PORT=$(etcdctl get $ETCD_DIR/master/port)
     echo "=> MASTER_PORT=${MASTER_PORT}"
-    MASTER_USER=$(etcdctl get $ETCD_DIR/master_user)
-    MASTER_PASS=$(etcdctl get $ETCD_DIR/master_pass)
+    MASTER_USER=$(etcdctl get $ETCD_DIR/master/user)
+    MASTER_PASS=$(etcdctl get $ETCD_DIR/master/pass)
 
     mysqlfailover --master=$MASTER_USER:$MASTER_PASS@$MASTER_HOST:$MASTER_PORT \
         --discover-slaves-login=$MASTER_USER:$MASTER_PASS \
